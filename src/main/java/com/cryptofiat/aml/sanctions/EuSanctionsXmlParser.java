@@ -69,27 +69,31 @@ public class EuSanctionsXmlParser extends DefaultHandler {
         }
 
         if (element.equals("DATE")) {
-            if (tmpValue.matches("([0-9]{4})-([0-9]{2})-([0-9]{2})")) {
-                entry.datesOfBirth.add((LocalDate.parse(tmpValue, dateOfBirthFormatter)));
-            } else if (tmpValue.matches("([0-9]{4})")) {
-                entry.yearsOfBirth.add(Integer.valueOf(tmpValue));
-            } else if (tmpValue.matches("([0-9]{4}) - ([0-9]{4}) \\(approximative\\)")
-                    || tmpValue.matches("([0-9]{4}) - ([0-9]{4})")) {
-                Integer start = Integer.valueOf(tmpValue.substring(0, 4));
-                Integer end = Integer.valueOf(tmpValue.substring(7, 11));
-                IntStream.rangeClosed(start, end).forEach(year -> entry.yearsOfBirth.add(year));
-            } else if (Pattern.compile("^([0-9]{4}).*").matcher(tmpValue).find()) {
-                entry.yearsOfBirth.add(Integer.valueOf(tmpValue.substring(0,4)));
-            } else if (Pattern.compile("^([0-9]{1,2})-([0-9]{4})").matcher(tmpValue).find()) {
-                entry.yearsOfBirth.add(Integer.valueOf(tmpValue.split("-")[1]));
-            } else if (tmpValue.replaceAll("\\s+","").equals("")) {
-                //Do Nothing
-            } else {
-                System.out.println("empty: " + tmpValue.isEmpty());
-                System.out.println("null: " + (tmpValue == null));
-                System.out.println("empty string: " + (tmpValue.equals("")));
-                throw new RuntimeException("Unknown date format: " + tmpValue);
-            }
+            parseDate();
+        }
+    }
+
+    private void parseDate() {
+        if (tmpValue.matches("([0-9]{4})-([0-9]{2})-([0-9]{2})")) {
+            entry.datesOfBirth.add((LocalDate.parse(tmpValue, dateOfBirthFormatter)));
+        } else if (tmpValue.matches("([0-9]{4})")) {
+            entry.yearsOfBirth.add(Integer.valueOf(tmpValue));
+        } else if (tmpValue.matches("([0-9]{4}) - ([0-9]{4}) \\(approximative\\)")
+                || tmpValue.matches("([0-9]{4}) - ([0-9]{4})")) {
+            Integer start = Integer.valueOf(tmpValue.substring(0, 4));
+            Integer end = Integer.valueOf(tmpValue.substring(7, 11));
+            IntStream.rangeClosed(start, end).forEach(year -> entry.yearsOfBirth.add(year));
+        } else if (Pattern.compile("^([0-9]{4}).*").matcher(tmpValue).find()) {
+            entry.yearsOfBirth.add(Integer.valueOf(tmpValue.substring(0,4)));
+        } else if (Pattern.compile("^([0-9]{1,2})-([0-9]{4})").matcher(tmpValue).find()) {
+            entry.yearsOfBirth.add(Integer.valueOf(tmpValue.split("-")[1]));
+        } else if (tmpValue.replaceAll("\\s+","").equals("")) {
+            //Do Nothing
+        } else {
+            System.out.println("empty: " + tmpValue.isEmpty());
+            System.out.println("null: " + (tmpValue == null));
+            System.out.println("empty string: " + (tmpValue.equals("")));
+            throw new RuntimeException("Unknown date format: " + tmpValue);
         }
     }
 
