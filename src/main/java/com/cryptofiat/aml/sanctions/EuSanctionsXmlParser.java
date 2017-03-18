@@ -50,8 +50,8 @@ public class EuSanctionsXmlParser extends DefaultHandler {
     }
 
     @Override
-    public void startElement(String s, String s1, String elementName, Attributes attributes) throws SAXException {
-        if (elementName.equalsIgnoreCase("ENTITY")) {
+    public void startElement(String s, String s1, String element, Attributes attributes) throws SAXException {
+        if (element.equalsIgnoreCase("ENTITY")) {
             entry = (new SanctionEntry())
                     .setListSource(SanctionListSource.EU)
                     .setId(Long.parseLong(attributes.getValue("Id")))
@@ -75,7 +75,7 @@ public class EuSanctionsXmlParser extends DefaultHandler {
         }
 
         if (element.equalsIgnoreCase("WHOLENAME")) {
-            entry.fullNames.add(tmpValue);
+            entry.getFullNames().add(tmpValue);
         }
 
         if (element.equals("DATE")) {
@@ -85,18 +85,18 @@ public class EuSanctionsXmlParser extends DefaultHandler {
 
     private void parseDate() {
         if (tmpValue.matches("([0-9]{4})-([0-9]{2})-([0-9]{2})")) {
-            entry.datesOfBirth.add((LocalDate.parse(tmpValue, dateOfBirthFormatter)));
+            entry.getDatesOfBirth().add((LocalDate.parse(tmpValue, dateOfBirthFormatter)));
         } else if (tmpValue.matches("([0-9]{4})")) {
-            entry.yearsOfBirth.add(Integer.valueOf(tmpValue));
+            entry.getYearsOfBirth().add(Integer.valueOf(tmpValue));
         } else if (tmpValue.matches("([0-9]{4}) - ([0-9]{4}) \\(approximative\\)")
                 || tmpValue.matches("([0-9]{4}) - ([0-9]{4})")) {
             Integer start = Integer.valueOf(tmpValue.substring(0, 4));
             Integer end = Integer.valueOf(tmpValue.substring(7, 11));
-            IntStream.rangeClosed(start, end).forEach(year -> entry.yearsOfBirth.add(year));
+            IntStream.rangeClosed(start, end).forEach(year -> entry.getYearsOfBirth().add(year));
         } else if (Pattern.compile("^([0-9]{4}).*").matcher(tmpValue).find()) {
-            entry.yearsOfBirth.add(Integer.valueOf(tmpValue.substring(0,4)));
+            entry.getYearsOfBirth().add(Integer.valueOf(tmpValue.substring(0,4)));
         } else if (Pattern.compile("^([0-9]{1,2})-([0-9]{4})").matcher(tmpValue).find()) {
-            entry.yearsOfBirth.add(Integer.valueOf(tmpValue.split("-")[1]));
+            entry.getYearsOfBirth().add(Integer.valueOf(tmpValue.split("-")[1]));
         } else if (tmpValue.replaceAll("\\s+","").equals("")) {
             //Do Nothing
         } else {

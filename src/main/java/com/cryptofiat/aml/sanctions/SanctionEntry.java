@@ -12,10 +12,10 @@ import java.util.Set;
 @Getter
 @Setter
 public class SanctionEntry {
-    Long id;
-    SanctionListSource listSource;
-    SanctionEntityType entityType;
-    Set<String> fullNames = new HashSet<>();
-    Set<LocalDate> datesOfBirth = new HashSet<>();
-    Set<Integer> yearsOfBirth = new HashSet<>();
+    private Long id;
+    private SanctionListSource listSource;
+    private SanctionEntityType entityType;
+    private Set<String> fullNames = new HashSet<>();
+    private Set<LocalDate> datesOfBirth = new HashSet<>();
+    private Set<Integer> yearsOfBirth = new HashSet<>();
 }
