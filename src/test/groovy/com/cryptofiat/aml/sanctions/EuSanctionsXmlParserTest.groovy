@@ -5,6 +5,7 @@ import spock.lang.Specification
 import java.time.LocalDate
 
 class EuSanctionsXmlParserTest extends Specification {
+
 	EuSanctionsXmlParser sanctionsParser
 
 	void setup() {
@@ -34,10 +35,13 @@ class EuSanctionsXmlParserTest extends Specification {
 			sanctionsParser.parseDocument(filepath)
 		then:
 			sanctionsParser.entries.size() == 2
-			sanctionsParser.entries[0].entityId == 1l
-			sanctionsParser.entries[0].type == EuSanctionType.PERSON
-			sanctionsParser.entries[1].entityId == 13l
-			sanctionsParser.entries[1].type == EuSanctionType.PERSON
+			sanctionsParser.entries[0].id == 1l
+			sanctionsParser.entries[0].entityType == SanctionEntityType.PERSON
+			sanctionsParser.entries[0].listSource == SanctionListSource.EU
+
+			sanctionsParser.entries[1].id == 13l
+			sanctionsParser.entries[1].entityType == SanctionEntityType.PERSON
+			sanctionsParser.entries[1].listSource == SanctionListSource.EU
 	}
 
 	def "parse sanction names"() {

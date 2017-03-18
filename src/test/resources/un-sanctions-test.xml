@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONSOLIDATED_LIST xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://www.un.org/sc/resources/sc-sanctions.xsd" dateGenerated="2017-03-17T19:06:44.421-04:00">
+    <INDIVIDUALS>
+        <INDIVIDUAL>
+            <DATAID>6908434</DATAID>
+            <VERSIONNUM>1</VERSIONNUM>
+            <FIRST_NAME>ABD</FIRST_NAME>
+            <SECOND_NAME>AL-KHALIQ</SECOND_NAME>
+            <THIRD_NAME> AL-HOUTHI </THIRD_NAME>
+            <UN_LIST_TYPE>Yemen</UN_LIST_TYPE>
+            <REFERENCE_NUMBER>YEi.001</REFERENCE_NUMBER>
+            <LISTED_ON>2014-11-07</LISTED_ON>
+            <NAME_ORIGINAL_SCRIPT>عبدالخالق الحوثي</NAME_ORIGINAL_SCRIPT>
+            <COMMENTS1>Gender [Male]. INTERPOL-UN Security Council Special Notice web link: https://www.interpol.int/en/notice/search/un/5837297</COMMENTS1>
+            <DESIGNATION>
+                <VALUE>Huthi military commander</VALUE>
+            </DESIGNATION>
+            <NATIONALITY>
+                <VALUE>Yemen</VALUE>
+            </NATIONALITY>
+            <LIST_TYPE>
+                <VALUE>UN List</VALUE>
+            </LIST_TYPE>
+            <LAST_DAY_UPDATED>
+                <VALUE>2014-11-20</VALUE>
+                <VALUE>2016-08-26</VALUE>
+            </LAST_DAY_UPDATED>
+            <INDIVIDUAL_ALIAS>
+                <QUALITY>Good</QUALITY>
+                <ALIAS_NAME>Abd-al-Khaliq al-Huthi</ALIAS_NAME>
+            </INDIVIDUAL_ALIAS>
+            <INDIVIDUAL_ALIAS>
+                <QUALITY>Good</QUALITY>
+                <ALIAS_NAME>Abd-al-Khaliq Badr-al-Din al Huthi</ALIAS_NAME>
+            </INDIVIDUAL_ALIAS>
+            <INDIVIDUAL_ALIAS>
+                <QUALITY>Good</QUALITY>
+                <ALIAS_NAME>‘Abd al-Khaliq Badr al-Din al-Huthi</ALIAS_NAME>
+            </INDIVIDUAL_ALIAS>
+            <INDIVIDUAL_ALIAS>
+                <QUALITY>Good</QUALITY>
+                <ALIAS_NAME>Abd al-Khaliq al-Huthi </ALIAS_NAME>
+            </INDIVIDUAL_ALIAS>
+            <INDIVIDUAL_ALIAS>
+                <QUALITY>Low</QUALITY>
+                <ALIAS_NAME>Abu-Yunus</ALIAS_NAME>
+            </INDIVIDUAL_ALIAS>
+            <INDIVIDUAL_ADDRESS>
+                <COUNTRY/>
+            </INDIVIDUAL_ADDRESS>
+            <INDIVIDUAL_DATE_OF_BIRTH>
+                <TYPE_OF_DATE>EXACT</TYPE_OF_DATE>
+                <YEAR>1984</YEAR>
+            </INDIVIDUAL_DATE_OF_BIRTH>
+            <INDIVIDUAL_PLACE_OF_BIRTH/>
+            <INDIVIDUAL_DOCUMENT/>
+            <SORT_KEY/>
+            <SORT_KEY_LAST_MOD/>
+        </INDIVIDUAL>
+        <INDIVIDUAL>
+            <DATAID>6908576</DATAID>
+            <VERSIONNUM>1</VERSIONNUM>
+            <FIRST_NAME>IYAD</FIRST_NAME>
+            <SECOND_NAME>NAZMI </SECOND_NAME>
+            <THIRD_NAME>SALIH</THIRD_NAME>
+            <FOURTH_NAME> KHALIL</FOURTH_NAME>
+            <UN_LIST_TYPE>Al-Qaida</UN_LIST_TYPE>
+            <REFERENCE_NUMBER>QDi.400</REFERENCE_NUMBER>
+            <LISTED_ON>2017-02-22</LISTED_ON>
+            <NAME_ORIGINAL_SCRIPT>إياد نظمي صالح خليل </NAME_ORIGINAL_SCRIPT>
+            <COMMENTS1>Leader of Al-Nusrah Front for the People of the Levant (QDe.137) for coastal area of Syrian Arab Republic since March 2016.</COMMENTS1>
+            <NATIONALITY>
+                <VALUE>Jordan</VALUE>
+            </NATIONALITY>
+            <LIST_TYPE>
+                <VALUE>UN List</VALUE>
+            </LIST_TYPE>
+            <INDIVIDUAL_ALIAS>
+                <QUALITY>Good</QUALITY>
+                <ALIAS_NAME>Ayyad Nazmi Salih Khalil </ALIAS_NAME>
+            </INDIVIDUAL_ALIAS>
+            <INDIVIDUAL_ALIAS>
+                <QUALITY>Good</QUALITY>
+                <ALIAS_NAME>Eyad Nazmi Saleh Khalil</ALIAS_NAME>
+            </INDIVIDUAL_ALIAS>
+            <INDIVIDUAL_ALIAS>
+                <QUALITY>Low</QUALITY>
+                <ALIAS_NAME>Iyad al-Toubasi </ALIAS_NAME>
+            </INDIVIDUAL_ALIAS>
+            <INDIVIDUAL_ALIAS>
+                <QUALITY>Low</QUALITY>
+                <ALIAS_NAME>Iyad al-Tubasi </ALIAS_NAME>
+            </INDIVIDUAL_ALIAS>
+            <INDIVIDUAL_ALIAS>
+                <QUALITY>Low</QUALITY>
+                <ALIAS_NAME>Abu al-Darda' </ALIAS_NAME>
+            </INDIVIDUAL_ALIAS>
+            <INDIVIDUAL_ALIAS>
+                <QUALITY>Low</QUALITY>
+                <ALIAS_NAME>Abu-Julaybib al-Urduni </ALIAS_NAME>
+            </INDIVIDUAL_ALIAS>
+            <INDIVIDUAL_ALIAS>
+                <QUALITY>Low</QUALITY>
+                <ALIAS_NAME>Abu-Julaybib </ALIAS_NAME>
+            </INDIVIDUAL_ALIAS>
+            <INDIVIDUAL_ADDRESS>
+                <COUNTRY>Syrian Arab Republic</COUNTRY>
+                <NOTE>Coastal area of. Location as of April 2016</NOTE>
+            </INDIVIDUAL_ADDRESS>
+            <INDIVIDUAL_DATE_OF_BIRTH>
+                <TYPE_OF_DATE>EXACT</TYPE_OF_DATE>
+                <YEAR>1974</YEAR>
+            </INDIVIDUAL_DATE_OF_BIRTH>
+            <INDIVIDUAL_PLACE_OF_BIRTH>
+                <COUNTRY>Syrian Arab Republic</COUNTRY>
+            </INDIVIDUAL_PLACE_OF_BIRTH>
+            <INDIVIDUAL_DOCUMENT>
+                <TYPE_OF_DOCUMENT>Passport</TYPE_OF_DOCUMENT>
+                <NUMBER>Jordan 654781</NUMBER>
+                <NOTE>approximately issued in 2009</NOTE>
+            </INDIVIDUAL_DOCUMENT>
+            <INDIVIDUAL_DOCUMENT>
+                <TYPE_OF_DOCUMENT>Passport</TYPE_OF_DOCUMENT>
+                <NUMBER>Jordan 286062 </NUMBER>
+                <NOTE>issued on 5 April 1999 at Zarqa, Jordan, expired on 4 April 2004</NOTE>
+            </INDIVIDUAL_DOCUMENT>
+            <SORT_KEY/>
+            <SORT_KEY_LAST_MOD/>
+        </INDIVIDUAL>
+        <INDIVIDUAL>
+            <DATAID>6908443</DATAID>
+            <VERSIONNUM>1</VERSIONNUM>
+            <FIRST_NAME>'ABD AL-MALIK</FIRST_NAME>
+            <SECOND_NAME>MUHAMMAD</SECOND_NAME>
+            <THIRD_NAME>YUSUF</THIRD_NAME>
+            <FOURTH_NAME>'UTHMAN 'ABD AL-SALAM</FOURTH_NAME>
+            <UN_LIST_TYPE>Al-Qaida</UN_LIST_TYPE>
+            <REFERENCE_NUMBER>QDi.346</REFERENCE_NUMBER>
+            <LISTED_ON>2015-01-23</LISTED_ON>
+            <NAME_ORIGINAL_SCRIPT>عبدالملك محمد يوسف عثمان عبد السلام</NAME_ORIGINAL_SCRIPT>
+            <COMMENTS1>Facilitator who provides financial, material, and technological support
+                for Al-Qaida (QDe.004) and Al-Nusrah Front for the People of the Levant
+                (QDe.137). INTERPOL-UN Security Council Special Notice web link: https://www.interpol.int/en/notice/search/un/5843243</COMMENTS1>
+            <NATIONALITY>
+                <VALUE>Jordan</VALUE>
+            </NATIONALITY>
+            <LIST_TYPE>
+                <VALUE>UN List</VALUE>
+            </LIST_TYPE>
+            <INDIVIDUAL_ALIAS>
+                <QUALITY>Good</QUALITY>
+                <ALIAS_NAME>'Abd al-Malik Muhammad Yusif 'Abd-al-Salam</ALIAS_NAME>
+            </INDIVIDUAL_ALIAS>
+            <INDIVIDUAL_ALIAS>
+                <QUALITY>Low</QUALITY>
+                <ALIAS_NAME>'Umar al-Qatari</ALIAS_NAME>
+            </INDIVIDUAL_ALIAS>
+            <INDIVIDUAL_ALIAS>
+                <QUALITY>Low</QUALITY>
+                <ALIAS_NAME>'Umar al-Tayyar</ALIAS_NAME>
+            </INDIVIDUAL_ALIAS>
+            <INDIVIDUAL_ADDRESS>
+                <COUNTRY/>
+            </INDIVIDUAL_ADDRESS>
+            <INDIVIDUAL_DATE_OF_BIRTH>
+                <TYPE_OF_DATE>EXACT</TYPE_OF_DATE>
+                <DATE>1989-07-13</DATE>
+            </INDIVIDUAL_DATE_OF_BIRTH>
+            <INDIVIDUAL_PLACE_OF_BIRTH/>
+            <INDIVIDUAL_DOCUMENT>
+                <TYPE_OF_DOCUMENT>Passport</TYPE_OF_DOCUMENT>
+                <NUMBER>K475336</NUMBER>
+                <DATE_OF_ISSUE>2009-08-31</DATE_OF_ISSUE>
+                <COUNTRY_OF_ISSUE>Jordan</COUNTRY_OF_ISSUE>
+                <NOTE>expired on 30 Aug. 2014</NOTE>
+            </INDIVIDUAL_DOCUMENT>
+            <INDIVIDUAL_DOCUMENT>
+                <TYPE_OF_DOCUMENT>National Identification Number</TYPE_OF_DOCUMENT>
+                <NUMBER>28940000602</NUMBER>
+                <COUNTRY_OF_ISSUE>Qatar</COUNTRY_OF_ISSUE>
+            </INDIVIDUAL_DOCUMENT>
+            <SORT_KEY/>
+            <SORT_KEY_LAST_MOD/>
+        </INDIVIDUAL>
+    </INDIVIDUALS>
+    <ENTITIES>
+        <ENTITY>
+            <DATAID>110403</DATAID>
+            <VERSIONNUM>1</VERSIONNUM>
+            <FIRST_NAME>7TH OF TIR</FIRST_NAME>
+            <UN_LIST_TYPE>Iran</UN_LIST_TYPE>
+            <REFERENCE_NUMBER>IRe.001</REFERENCE_NUMBER>
+            <LISTED_ON>2006-12-23</LISTED_ON>
+            <COMMENTS1>Subordinate of Defence Industries Organisation (DIO), widely recognized
+                as being directly involved in the nuclear programme. [Old Reference #E.37.A.7]</COMMENTS1>
+            <LIST_TYPE>
+                <VALUE>UN List</VALUE>
+            </LIST_TYPE>
+            <LAST_DAY_UPDATED>
+                <VALUE>2014-12-17</VALUE>
+            </LAST_DAY_UPDATED>
+            <ENTITY_ADDRESS/>
+            <SORT_KEY/>
+            <SORT_KEY_LAST_MOD/>
+        </ENTITY>
+        <ENTITY>
+            <DATAID>6908409</DATAID>
+            <VERSIONNUM>1</VERSIONNUM>
+            <FIRST_NAME>ABDALLAH AZZAM BRIGADES (AAB)</FIRST_NAME>
+            <UN_LIST_TYPE>Al-Qaida</UN_LIST_TYPE>
+            <REFERENCE_NUMBER>QDe.144</REFERENCE_NUMBER>
+            <LISTED_ON>2014-09-23</LISTED_ON>
+            <COMMENTS1>An armed group that has carried out joint attacks with Al-Nusrah Front
+                for the People of the Levant (QDe.137). INTERPOL-UN Security Council Special Notice web link: https://www.interpol.int/en/notice/search/une/5817658</COMMENTS1>
+            <LIST_TYPE>
+                <VALUE>UN List</VALUE>
+            </LIST_TYPE>
+            <ENTITY_ALIAS>
+                <QUALITY>a.k.a.</QUALITY>
+                <ALIAS_NAME>Abdullah Azzam Brigades</ALIAS_NAME>
+            </ENTITY_ALIAS>
+            <ENTITY_ALIAS>
+                <QUALITY>a.k.a.</QUALITY>
+                <ALIAS_NAME>Ziyad al-Jarrah Battalions of the Abdallah Azzam Brigades</ALIAS_NAME>
+            </ENTITY_ALIAS>
+            <ENTITY_ALIAS>
+                <QUALITY>a.k.a.</QUALITY>
+                <ALIAS_NAME>Yusuf al-'Uyayri Battalions of the Abdallah Azzam Brigades</ALIAS_NAME>
+            </ENTITY_ALIAS>
+            <ENTITY_ADDRESS>
+                <NOTE>Operates in Lebanon, Syria and the Arabian Peninsula</NOTE>
+            </ENTITY_ADDRESS>
+            <SORT_KEY/>
+            <SORT_KEY_LAST_MOD/>
+        </ENTITY>
+        <ENTITY>
+            <DATAID>113445</DATAID>
+            <VERSIONNUM>1</VERSIONNUM>
+            <FIRST_NAME>ABU SAYYAF GROUP</FIRST_NAME>
+            <UN_LIST_TYPE>Al-Qaida</UN_LIST_TYPE>
+            <REFERENCE_NUMBER>QDe.001</REFERENCE_NUMBER>
+            <LISTED_ON>2001-10-06</LISTED_ON>
+            <COMMENTS1>Associated with Jemaah Islamiyah (JI) (QDe.092). Current leader is
+                Radulan Sahiron (QDi.208). Review pursuant to Security Council resolution 1822 (2008)
+                was concluded on 21 Jun. 2010. INTERPOL-UN Security Council Special Notice web link: https://www.interpol.int/en/notice/search/une/5278422</COMMENTS1>
+            <LIST_TYPE>
+                <VALUE>UN List</VALUE>
+            </LIST_TYPE>
+            <LAST_DAY_UPDATED>
+                <VALUE>2011-12-13</VALUE>
+            </LAST_DAY_UPDATED>
+            <ENTITY_ALIAS>
+                <QUALITY>a.k.a.</QUALITY>
+                <ALIAS_NAME>Al Harakat Al Islamiyya</ALIAS_NAME>
+            </ENTITY_ALIAS>
+            <ENTITY_ADDRESS>
+                <COUNTRY>Philippines</COUNTRY>
+            </ENTITY_ADDRESS>
+            <SORT_KEY/>
+            <SORT_KEY_LAST_MOD/>
+        </ENTITY>
+    </ENTITIES>
+</CONSOLIDATED_LIST>

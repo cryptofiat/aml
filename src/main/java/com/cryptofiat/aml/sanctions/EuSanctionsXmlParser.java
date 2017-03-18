@@ -19,9 +19,9 @@ import java.util.stream.IntStream;
 public class EuSanctionsXmlParser extends DefaultHandler {
 
     @Getter
-    private List<EuSanctionEntry> entries;
+    private List<SanctionEntry> entries;
 
-    private EuSanctionEntry entry;
+    private SanctionEntry entry;
     private String tmpValue;
     private DateTimeFormatter dateOfBirthFormatter;
 
@@ -31,15 +31,15 @@ public class EuSanctionsXmlParser extends DefaultHandler {
     }
 
     private void clearEntries() {
-        this.entries = new ArrayList<EuSanctionEntry>();
+        this.entries = new ArrayList<>();
     }
 
-    public void parseDocument(String fileUri) {
+    public void parseDocument(String filepath) {
         clearEntries();
         SAXParserFactory factory = SAXParserFactory.newInstance();
         try {
             SAXParser parser = factory.newSAXParser();
-            parser.parse(fileUri, this);
+            parser.parse(filepath, this);
         } catch (ParserConfigurationException e) {
             System.out.println("ParserConfig error");
         } catch (SAXException e) {
@@ -52,10 +52,20 @@ public class EuSanctionsXmlParser extends DefaultHandler {
     @Override
     public void startElement(String s, String s1, String elementName, Attributes attributes) throws SAXException {
         if (elementName.equalsIgnoreCase("ENTITY")) {
-            entry = new EuSanctionEntry();
-            entry.setEntityId(Long.parseLong(attributes.getValue("Id")));
-            entry.setType(EuSanctionType.parseFromXml(attributes.getValue("Type")));
+            entry = (new SanctionEntry())
+                    .setListSource(SanctionListSource.EU)
+                    .setId(Long.parseLong(attributes.getValue("Id")))
+                    .setEntityType(parseSanctionEntityType(attributes.getValue("Type")));
         }
+    }
+
+    private static SanctionEntityType parseSanctionEntityType(String type) {
+        if (type.equals("P")) {
+            return SanctionEntityType.PERSON;
+        } else if (type.equals("E")) {
+            return SanctionEntityType.ORGANIZATION;
+        }
+        throw new RuntimeException("Unknown EU Sanction Type: " + type);
     }
 
     @Override

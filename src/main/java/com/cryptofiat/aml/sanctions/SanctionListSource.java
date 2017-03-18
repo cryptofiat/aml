@@ -1,6 +1,6 @@
 package com.cryptofiat.aml.sanctions;
 
-public enum SanctionsListType {
+public enum SanctionListSource {
     UN,
     EU
 }
