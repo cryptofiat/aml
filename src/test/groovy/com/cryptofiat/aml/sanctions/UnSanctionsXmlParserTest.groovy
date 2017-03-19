@@ -28,29 +28,29 @@ class UnSanctionsXmlParserTest extends Specification {
 		then:
 			entries.size() == 6
 
-			entries[0].id == 6908434l
-			entries[0].entityType == SanctionEntityType.PERSON
-			entries[0].listSource == SanctionListSource.UN
+			entries[0].sourceId == 6908434l
+			entries[0].type == SanctionEntryType.PERSON
+			entries[0].source == SanctionSource.UN
 
-			entries[1].id == 6908576l
-			entries[1].entityType == SanctionEntityType.PERSON
-			entries[1].listSource == SanctionListSource.UN
+			entries[1].sourceId == 6908576l
+			entries[1].type == SanctionEntryType.PERSON
+			entries[1].source == SanctionSource.UN
 
-			entries[2].id == 6908443l
-			entries[2].entityType == SanctionEntityType.PERSON
-			entries[2].listSource == SanctionListSource.UN
+			entries[2].sourceId == 6908443l
+			entries[2].type == SanctionEntryType.PERSON
+			entries[2].source == SanctionSource.UN
 
-			entries[3].id == 110403l
-			entries[3].entityType == SanctionEntityType.ORGANIZATION
-			entries[3].listSource == SanctionListSource.UN
+			entries[3].sourceId == 110403l
+			entries[3].type == SanctionEntryType.ORGANIZATION
+			entries[3].source == SanctionSource.UN
 
-			entries[4].id == 6908409l
-			entries[4].entityType == SanctionEntityType.ORGANIZATION
-			entries[4].listSource == SanctionListSource.UN
+			entries[4].sourceId == 6908409l
+			entries[4].type == SanctionEntryType.ORGANIZATION
+			entries[4].source == SanctionSource.UN
 
-			entries[5].id == 113445l
-			entries[5].entityType == SanctionEntityType.ORGANIZATION
-			entries[5].listSource == SanctionListSource.UN
+			entries[5].sourceId == 113445l
+			entries[5].type == SanctionEntryType.ORGANIZATION
+			entries[5].source == SanctionSource.UN
 	}
 
 	def "can parse sanction names"() {

@@ -1,0 +1,7 @@
+#Database Configuration
+spring:
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/euro2
+    username: euro2_aml
+    password: muhammed123

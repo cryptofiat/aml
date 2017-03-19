@@ -52,15 +52,15 @@ public class UnSanctionsXmlParser extends DefaultHandler implements ISanctionsXm
     public void startElement(String s, String s1, String element, Attributes attributes) throws SAXException {
         if (element.equals("INDIVIDUAL")) {
             entry = (new SanctionEntry())
-                    .setListSource(SanctionListSource.UN)
-                    .setEntityType(SanctionEntityType.PERSON);
+                    .setSource(SanctionSource.UN)
+                    .setType(SanctionEntryType.PERSON);
             compoundName = "";
         }
 
         if (element.equals("ENTITY")) {
             entry = (new SanctionEntry())
-                    .setListSource(SanctionListSource.UN)
-                    .setEntityType(SanctionEntityType.ORGANIZATION);
+                    .setSource(SanctionSource.UN)
+                    .setType(SanctionEntryType.ORGANIZATION);
             compoundName = "";
         }
 
@@ -77,7 +77,7 @@ public class UnSanctionsXmlParser extends DefaultHandler implements ISanctionsXm
         }
 
         if (element.equals("DATAID")) {
-            entry.setId(Long.parseLong(tmpValue));
+            entry.setSourceId(Long.parseLong(tmpValue));
         }
 
         if (nameComponentTags.contains(element)) {

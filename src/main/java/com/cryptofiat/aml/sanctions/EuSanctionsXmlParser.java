@@ -48,17 +48,17 @@ public class EuSanctionsXmlParser extends DefaultHandler implements ISanctionsXm
     public void startElement(String s, String s1, String element, Attributes attributes) throws SAXException {
         if (element.equalsIgnoreCase("ENTITY")) {
             entry = (new SanctionEntry())
-                    .setListSource(SanctionListSource.EU)
-                    .setId(Long.parseLong(attributes.getValue("Id")))
-                    .setEntityType(parseSanctionEntityType(attributes.getValue("Type")));
+                    .setSource(SanctionSource.EU)
+                    .setSourceId(Long.parseLong(attributes.getValue("Id")))
+                    .setType(parseSanctionEntityType(attributes.getValue("Type")));
         }
     }
 
-    private static SanctionEntityType parseSanctionEntityType(String type) {
+    private static SanctionEntryType parseSanctionEntityType(String type) {
         if (type.equals("P")) {
-            return SanctionEntityType.PERSON;
+            return SanctionEntryType.PERSON;
         } else if (type.equals("E")) {
-            return SanctionEntityType.ORGANIZATION;
+            return SanctionEntryType.ORGANIZATION;
         }
         throw new RuntimeException("Unknown EU Sanction Type: " + type);
     }

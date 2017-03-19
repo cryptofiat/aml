@@ -28,13 +28,13 @@ class EuSanctionsXmlParserTest extends Specification {
 			def entries = sanctionsParser.parseEntries(filepath)
 		then:
 			entries.size() == 2
-			entries[0].id == 1l
-			entries[0].entityType == SanctionEntityType.PERSON
-			entries[0].listSource == SanctionListSource.EU
+			entries[0].sourceId == 1l
+			entries[0].type == SanctionEntryType.PERSON
+			entries[0].source == SanctionSource.EU
 
-			entries[1].id == 13l
-			entries[1].entityType == SanctionEntityType.PERSON
-			entries[1].listSource == SanctionListSource.EU
+			entries[1].sourceId == 13l
+			entries[1].type == SanctionEntryType.PERSON
+			entries[1].source == SanctionSource.EU
 	}
 
 	def "parse sanction names"() {

@@ -1,6 +1,6 @@
 package com.cryptofiat.aml.sanctions;
 
-public enum SanctionEntityType {
+public enum SanctionEntryType {
     PERSON,
     ORGANIZATION
 }

@@ -4,9 +4,15 @@ buildscript {
 	}
 	repositories {
 		mavenCentral()
+		maven {
+			url 'https://plugins.gradle.org/m2/'
+		}
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath('org.postgresql:postgresql:9.4.1212')
+		classpath('nu.studer:gradle-jooq-plugin:2.0.4')
+		classpath('gradle.plugin.com.boxfuse.client:flyway-release:4.1.2')
 	}
 }
 
@@ -14,6 +20,8 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'groovy'
+apply plugin: 'nu.studer.jooq'
+apply plugin: 'org.flywaydb.flyway'
 
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
@@ -23,15 +31,81 @@ repositories {
 }
 
 dependencies {
+
 	compile('org.springframework.boot:spring-boot-starter')
 	compile('commons-io:commons-io:2.4')
 	compileOnly('org.projectlombok:lombok:1.16.14')
+
+	compile('org.springframework.boot:spring-boot-starter-jooq')
+	compile('org.postgresql:postgresql:9.4.1212')
+	compile('org.flywaydb:flyway-core:4.1.2')
 
 	testCompile('org.codehaus.groovy:groovy-all:2.4.7')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('org.spockframework:spock-core:1.0-groovy-2.4')
 }
 
+//Needed, otherwise JOOQ doesn't compile with class not found errors
+dependencies {
+	jooqRuntime 'org.postgresql:postgresql:9.4.1212'
+}
+
 bootRepackage {
 	mainClass = 'com.cryptofiat.aml'
 }
+
+jooq {
+	aml(sourceSets.main) {
+		jdbc {
+			driver = 'org.postgresql.Driver'
+			url = 'jdbc:postgresql://localhost:5432/euro2'
+			user = 'euro2_aml'
+			password = 'muhammed123'
+			schema = 'aml'
+		}
+		generator {
+			name = 'org.jooq.util.DefaultGenerator'
+			strategy {
+				name = 'org.jooq.util.DefaultGeneratorStrategy'
+			}
+			database {
+				name = 'org.jooq.util.postgres.PostgresDatabase'
+				inputSchema = 'aml'
+				customTypes {
+					customType {
+						name = 'com.fasterxml.jackson.databind.JsonNode'
+						converter = 'csmart.api.config.db.PostgresJSONJacksonJsonNodeBinding'
+					}
+				}
+				forcedTypes {
+					forcedType {
+						name = 'com.fasterxml.jackson.databind.JsonNode'
+						expression = 'public\\.users\\.address'
+					}
+				}
+			}
+			generate {
+				relations = true
+				deprecated = false
+				records = true
+				immutablePojos = false
+				fluentSetters = true
+			}
+			target {
+				packageName = 'com.cryptofiat.aml'
+				directory = 'src/main/generated/java'
+			}
+		}
+	}
+}
+
+flyway {
+	url = 'jdbc:postgresql://localhost:5432/euro2'
+	user = 'euro2_aml'
+	password = 'muhammed123'
+	schemas = ['aml']
+	locations = ["filesystem:$project.projectDir/src/main/resources/db/migration"]
+}
+
+generateAmlJooqSchemaSource.dependsOn flywayMigrate
+test.dependsOn flywayClean
