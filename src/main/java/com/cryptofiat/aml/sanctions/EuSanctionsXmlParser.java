@@ -1,14 +1,10 @@
 package com.cryptofiat.aml.sanctions;
 
-import lombok.Getter;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
-
-import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -16,9 +12,8 @@ import java.util.List;
 import java.util.regex.Pattern;
 import java.util.stream.IntStream;
 
-public class EuSanctionsXmlParser extends DefaultHandler {
+public class EuSanctionsXmlParser extends DefaultHandler implements ISanctionsXmlParser {
 
-    @Getter
     private List<SanctionEntry> entries;
 
     private SanctionEntry entry;
@@ -34,19 +29,19 @@ public class EuSanctionsXmlParser extends DefaultHandler {
         this.entries = new ArrayList<>();
     }
 
-    public void parseDocument(String filepath) {
+    @Override
+    public List<SanctionEntry> parseEntries(String filepath) {
         clearEntries();
         SAXParserFactory factory = SAXParserFactory.newInstance();
         try {
             SAXParser parser = factory.newSAXParser();
             parser.parse(filepath, this);
-        } catch (ParserConfigurationException e) {
-            System.out.println("ParserConfig error");
-        } catch (SAXException e) {
-            System.out.println("SAXException : xml not well formed");
-        } catch (IOException e) {
-            System.out.println("IO error");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
+        List<SanctionEntry> results = entries;
+        clearEntries();
+        return results;
     }
 
     @Override

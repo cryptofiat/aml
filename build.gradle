@@ -24,6 +24,7 @@ repositories {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter')
+	compile('commons-io:commons-io:2.4')
 	compileOnly('org.projectlombok:lombok:1.16.14')
 
 	testCompile('org.codehaus.groovy:groovy-all:2.4.7')

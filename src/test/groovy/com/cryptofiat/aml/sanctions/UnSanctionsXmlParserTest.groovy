@@ -11,62 +11,55 @@ class UnSanctionsXmlParserTest extends Specification {
 		sanctionsParser = new UnSanctionsXmlParser()
 	}
 
-	def "new parser has empty sanctions list"() {
-		when:
-			def entries = sanctionsParser.getEntries()
-		then:
-			entries.size() == 0
-	}
-
-	def "parser does nothing if file doesn't exist"() {
+	def "parser throws exception if file doesn't exist"() {
 		given:
 			def filename = 'hello.xml'
 		when:
-			sanctionsParser.parseDocument(filename)
+			sanctionsParser.parseEntries(filename)
 		then:
-			sanctionsParser.entries.size() == 0
+			thrown(RuntimeException)
 	}
 
 	def "can parse sanction entries and types"() {
 		given:
 			def filepath = getFilePath('un-sanctions-test.xml')
 		when:
-			sanctionsParser.parseDocument(filepath)
+			def entries = sanctionsParser.parseEntries(filepath)
 		then:
-			sanctionsParser.entries.size() == 6
+			entries.size() == 6
 
-			sanctionsParser.entries[0].id == 6908434l
-			sanctionsParser.entries[0].entityType == SanctionEntityType.PERSON
-			sanctionsParser.entries[0].listSource == SanctionListSource.UN
+			entries[0].id == 6908434l
+			entries[0].entityType == SanctionEntityType.PERSON
+			entries[0].listSource == SanctionListSource.UN
 
-			sanctionsParser.entries[1].id == 6908576l
-			sanctionsParser.entries[1].entityType == SanctionEntityType.PERSON
-			sanctionsParser.entries[1].listSource == SanctionListSource.UN
+			entries[1].id == 6908576l
+			entries[1].entityType == SanctionEntityType.PERSON
+			entries[1].listSource == SanctionListSource.UN
 
-			sanctionsParser.entries[2].id == 6908443l
-			sanctionsParser.entries[2].entityType == SanctionEntityType.PERSON
-			sanctionsParser.entries[2].listSource == SanctionListSource.UN
+			entries[2].id == 6908443l
+			entries[2].entityType == SanctionEntityType.PERSON
+			entries[2].listSource == SanctionListSource.UN
 
-			sanctionsParser.entries[3].id == 110403l
-			sanctionsParser.entries[3].entityType == SanctionEntityType.ORGANIZATION
-			sanctionsParser.entries[3].listSource == SanctionListSource.UN
+			entries[3].id == 110403l
+			entries[3].entityType == SanctionEntityType.ORGANIZATION
+			entries[3].listSource == SanctionListSource.UN
 
-			sanctionsParser.entries[4].id == 6908409l
-			sanctionsParser.entries[4].entityType == SanctionEntityType.ORGANIZATION
-			sanctionsParser.entries[4].listSource == SanctionListSource.UN
+			entries[4].id == 6908409l
+			entries[4].entityType == SanctionEntityType.ORGANIZATION
+			entries[4].listSource == SanctionListSource.UN
 
-			sanctionsParser.entries[5].id == 113445l
-			sanctionsParser.entries[5].entityType == SanctionEntityType.ORGANIZATION
-			sanctionsParser.entries[5].listSource == SanctionListSource.UN
+			entries[5].id == 113445l
+			entries[5].entityType == SanctionEntityType.ORGANIZATION
+			entries[5].listSource == SanctionListSource.UN
 	}
 
 	def "can parse sanction names"() {
 		given:
 			def filepath = getFilePath('un-sanctions-test.xml')
 		when:
-			sanctionsParser.parseDocument(filepath)
+			def entries = sanctionsParser.parseEntries(filepath)
 		then:
-			sanctionsParser.entries[0].fullNames.size() == 6
+			entries[0].fullNames.size() == 6
 			[
 					"ABD AL-KHALIQ AL-HOUTHI",
 					"Abd-al-Khaliq al-Huthi",
@@ -74,9 +67,9 @@ class UnSanctionsXmlParserTest extends Specification {
 					"‘Abd al-Khaliq Badr al-Din al-Huthi",
 					"Abd al-Khaliq al-Huthi",
 					"Abu-Yunus"
-			].every { name -> sanctionsParser.entries[0].fullNames.contains(name) }
+			].every { name -> entries[0].fullNames.contains(name) }
 
-			sanctionsParser.entries[1].fullNames.size() == 8
+			entries[1].fullNames.size() == 8
 			[
 					"IYAD NAZMI SALIH KHALIL ALI",
 					"Ayyad Nazmi Salih Khalil",
@@ -86,55 +79,55 @@ class UnSanctionsXmlParserTest extends Specification {
 					"Abu al-Darda'",
 					"Abu-Julaybib al-Urduni",
 					"Abu-Julaybib"
-			].every { name -> sanctionsParser.entries[1].fullNames.contains(name) }
+			].every { name -> entries[1].fullNames.contains(name) }
 
-			sanctionsParser.entries[3].fullNames.size() == 1
-			sanctionsParser.entries[3].fullNames.first() == "7TH OF TIR"
+			entries[3].fullNames.size() == 1
+			entries[3].fullNames.first() == "7TH OF TIR"
 
-			sanctionsParser.entries[4].fullNames.size() == 4
+			entries[4].fullNames.size() == 4
 			[
 					"ABDALLAH AZZAM BRIGADES (AAB)",
 					"Abdullah Azzam Brigades",
 					"Ziyad al-Jarrah Battalions of the Abdallah Azzam Brigades",
 					"Yusuf al-'Uyayri Battalions of the Abdallah Azzam Brigades",
-			].every { name -> sanctionsParser.entries[4].fullNames.contains(name) }
+			].every { name -> entries[4].fullNames.contains(name) }
 	}
 
 	def "can parse dates and years of birth"() {
 		given:
 			def filepath = getFilePath('un-sanctions-test.xml')
 		when:
-			sanctionsParser.parseDocument(filepath)
+			def entries = sanctionsParser.parseEntries(filepath)
 		then:
-			sanctionsParser.entries[0].datesOfBirth.isEmpty()
-			sanctionsParser.entries[0].yearsOfBirth.size() == 1
-			sanctionsParser.entries[0].yearsOfBirth.first() == 1984
+			entries[0].datesOfBirth.isEmpty()
+			entries[0].yearsOfBirth.size() == 1
+			entries[0].yearsOfBirth.first() == 1984
 
-			sanctionsParser.entries[1].datesOfBirth.isEmpty()
-			sanctionsParser.entries[1].yearsOfBirth.size() == 1
-			sanctionsParser.entries[1].yearsOfBirth.first() == 1974
+			entries[1].datesOfBirth.isEmpty()
+			entries[1].yearsOfBirth.size() == 1
+			entries[1].yearsOfBirth.first() == 1974
 
-			sanctionsParser.entries[2].yearsOfBirth.isEmpty()
-			sanctionsParser.entries[2].datesOfBirth.size() == 1
-			sanctionsParser.entries[2].datesOfBirth.first() == new LocalDate(1989,07,13)
+			entries[2].yearsOfBirth.isEmpty()
+			entries[2].datesOfBirth.size() == 1
+			entries[2].datesOfBirth.first() == new LocalDate(1989,07,13)
 
-			sanctionsParser.entries[3].datesOfBirth.isEmpty()
-			sanctionsParser.entries[3].yearsOfBirth.isEmpty()
+			entries[3].datesOfBirth.isEmpty()
+			entries[3].yearsOfBirth.isEmpty()
 
-			sanctionsParser.entries[4].datesOfBirth.isEmpty()
-			sanctionsParser.entries[4].yearsOfBirth.isEmpty()
+			entries[4].datesOfBirth.isEmpty()
+			entries[4].yearsOfBirth.isEmpty()
 
-			sanctionsParser.entries[5].datesOfBirth.isEmpty()
-			sanctionsParser.entries[5].yearsOfBirth.isEmpty()
+			entries[5].datesOfBirth.isEmpty()
+			entries[5].yearsOfBirth.isEmpty()
 	}
 
 	def "can parse entire EU sanctions list"() {
 		given:
 			def filepath = getFilePath('un-consolidated-sanctions.xml')
 		when:
-			sanctionsParser.parseDocument(filepath)
+			def entries = sanctionsParser.parseEntries(filepath)
 		then:
-			sanctionsParser.entries.size() > 0
+			entries.size() > 0
 	}
 
 	String getFilePath(String filename) {
