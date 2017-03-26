@@ -23,10 +23,10 @@ Set up local postgres:
 ## Sanctions
 Sources
 * UN Sanctions
-** https://scsanctions.un.org/resources/xml/en/consolidated.xml
+* * https://scsanctions.un.org/resources/xml/en/consolidated.xml
 * EU Sanctions
-** File - http://ec.europa.eu/external_relations/cfsp/sanctions/list/version4/global/global.xml
-** Help - http://ec.europa.eu/external_relations/cfsp/sanctions/list/version4/global/help_online/help.html
+* * File - http://ec.europa.eu/external_relations/cfsp/sanctions/list/version4/global/global.xml
+* * Help - http://ec.europa.eu/external_relations/cfsp/sanctions/list/version4/global/help_online/help.html
 
 ## Misc
 Count lines of code
